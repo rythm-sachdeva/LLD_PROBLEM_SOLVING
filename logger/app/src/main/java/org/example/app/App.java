@@ -20,7 +20,6 @@ import static org.example.app.MessageUtils.getMessage;
 import org.apache.commons.text.WordUtils;
 
 public class App {
-
     private static LogHandler getChainOfLogger(LogAppender appender)
     {
         LogHandler errorLogger = new ErrorLogger(Loglevel.ERROR, appender);
@@ -33,7 +32,6 @@ public class App {
     public static void main(String[] args) {
         LogAppender consoleAppender = new ConsoleAppender();
         LogAppender fiLogAppender = new FileAppende("log.txt");
-
         LogHandler loggerChain = getChainOfLogger(consoleAppender);
         loggerChain.logMessage(Loglevel.DEBUG, "this is debug");
         loggerChain.logMessage(Loglevel.INFO, "this is Info");
